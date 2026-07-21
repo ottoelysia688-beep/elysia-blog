@@ -1,0 +1,47 @@
+backend:
+  name: github
+  repo: ottoelysia688-beep/elysia-blog
+  branch: main
+  auth_type: oauth
+  app_id: ""
+
+# 发布内容存到 content/ 目录
+media_folder: "static/images"
+public_folder: "/images"
+
+# 中文界面
+locale: "zh_Hans"
+
+collections:
+  - name: "posts"
+    label: "文章"
+    label_singular: "文章"
+    folder: "content/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "发布日期", name: "date", widget: "datetime" }
+      - { label: "草稿", name: "draft", widget: "boolean", default: false }
+      - { label: "摘要", name: "summary", widget: "string", required: false }
+      - { label: "封面图", name: "cover", widget: "image", required: false }
+      - label: "标签"
+        name: "tags"
+        widget: "list"
+        required: false
+      - label: "分类"
+        name: "categories"
+        widget: "list"
+        required: false
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "页面"
+    label_singular: "页面"
+    folder: "content"
+    create: true
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "发布日期", name: "date", widget: "datetime" }
+      - { label: "草稿", name: "draft", widget: "boolean", default: false }
+      - { label: "正文", name: "body", widget: "markdown" }
