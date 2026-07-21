@@ -1,0 +1,189 @@
+/* ============================================
+   OttoElysia Blog - PaperMod 二次元美化
+   ============================================ */
+
+/* ===== 1. 全局渐变背景 ===== */
+:root {
+    --bg-gradient: linear-gradient(135deg, #e0ecff 0%, #f0e6ff 50%, #ffe0f0 100%);
+    --card-radius: 16px;
+    --accent-blue: #6c9fd8;
+    --accent-pink: #e891c7;
+    --accent-purple: #9b7ed8;
+}
+
+[data-theme="dark"] {
+    --bg-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a3e 100%);
+}
+
+body {
+    background: var(--bg-gradient) !important;
+    background-attachment: fixed !important;
+}
+
+/* ===== 2. 主容器半透明玻璃效果 ===== */
+.main {
+    background: rgba(255, 255, 255, 0.75) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: var(--card-radius) !important;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+    padding: 30px !important;
+    box-shadow: 0 8px 32px rgba(108, 159, 216, 0.1) !important;
+}
+
+[data-theme="dark"] .main {
+    background: rgba(25, 25, 40, 0.8) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ===== 3. 文章卡片悬浮动画 ===== */
+.post-title {
+    transition: transform 0.3s ease;
+}
+
+.post-title:hover {
+    transform: translateX(4px);
+}
+
+/* ===== 4. 文章标题渐变色 ===== */
+.post-title a {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .post-title a {
+    background: linear-gradient(135deg, #a8b4e8 0%, #c891d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ===== 5. 首页欢迎区美化 ===== */
+.first-entry {
+    border-radius: var(--card-radius) !important;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(240, 147, 251, 0.08)) !important;
+    padding: 40px 30px !important;
+    margin-bottom: 24px !important;
+}
+
+[data-theme="dark"] .first-entry {
+    background: linear-gradient(135deg, rgba(168, 180, 232, 0.05), rgba(200, 145, 212, 0.05)) !important;
+}
+
+/* ===== 6. 链接颜色 ===== */
+a {
+    color: var(--accent-blue);
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-pink);
+}
+
+/* ===== 7. 标签美化（胶囊形） ===== */
+.post-tags a {
+    border-radius: 20px !important;
+    padding: 4px 14px !important;
+    font-size: 0.85em !important;
+    background: linear-gradient(135deg, #e0ecff, #f0e0ff) !important;
+    color: #667eea !important;
+    border: none !important;
+    transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .post-tags a {
+    background: linear-gradient(135deg, rgba(108, 159, 216, 0.2), rgba(232, 145, 199, 0.2)) !important;
+    color: #a8b4e8 !important;
+}
+
+.post-tags a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(108, 159, 216, 0.3);
+}
+
+/* ===== 8. 代码块圆角 ===== */
+.highlight pre {
+    border-radius: 12px !important;
+    border: 1px solid rgba(108, 159, 216, 0.15) !important;
+}
+
+/* ===== 9. 搜索框美化 ===== */
+#searchInput {
+    border-radius: 20px !important;
+    border: 2px solid rgba(108, 159, 216, 0.2) !important;
+    transition: all 0.3s ease;
+}
+
+#searchInput:focus {
+    border-color: var(--accent-blue) !important;
+    box-shadow: 0 0 0 3px rgba(108, 159, 216, 0.15) !important;
+}
+
+/* ===== 10. 滚动条美化 ===== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #764ba2, #f093fb);
+}
+
+/* ===== 11. 导航栏玻璃效果 ===== */
+.nav {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.7) !important;
+    border-bottom: 1px solid rgba(108, 159, 216, 0.1) !important;
+}
+
+[data-theme="dark"] .nav {
+    background: rgba(25, 25, 40, 0.7) !important;
+    border-bottom: 1px solid rgba(100, 100, 150, 0.15) !important;
+}
+
+/* ===== 12. 文章内容排版优化 ===== */
+.post-content {
+    line-height: 1.8 !important;
+    letter-spacing: 0.02em !important;
+}
+
+.post-content p {
+    margin-bottom: 1.2em !important;
+}
+
+.post-content h2 {
+    border-bottom: 2px solid rgba(108, 159, 216, 0.2) !important;
+    padding-bottom: 8px !important;
+}
+
+/* ===== 13. 页脚美化 ===== */
+.footer {
+    text-align: center !important;
+    opacity: 0.7 !important;
+}
+
+/* ===== 14. 移动端优化 ===== */
+@media (max-width: 768px) {
+    .main {
+        padding: 20px !important;
+        border-radius: 12px !important;
+    }
+    
+    .first-entry {
+        padding: 25px 20px !important;
+    }
+}
