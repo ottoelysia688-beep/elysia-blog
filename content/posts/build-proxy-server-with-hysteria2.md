@@ -5,6 +5,7 @@ draft = false
 tags = ["VPS", "代理", "Hysteria2", "3x-ui", "RackNerd"]
 categories = ["折腾记录"]
 summary = "从什么是 VPS、怎么选购、怎么登录，到搭建代理节点、速度优化、安全加固的完整记录。从小白视角出发，含踩坑经验。"
+cover = "/images/covers/cover-vps-proxy.jpg"
 +++
 
 ## 写在前面

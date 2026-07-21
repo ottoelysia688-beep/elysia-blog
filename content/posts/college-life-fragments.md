@@ -5,6 +5,7 @@ draft = false
 tags = ["生活", "大学", "随笔"]
 categories = ["生活随笔"]
 summary = "偶尔记录一下大学生活的日常，不是技术文章，就是纯写写感受。"
+cover = "/images/covers/cover-life.jpg"
 +++
 
 > 📝 *这篇文章还在撰写中，以下是大纲预告，稍后填充完整内容。*

@@ -25,6 +25,8 @@ hideSummary = false
 showtoc = true
 tocopen = false
 enableEmoji = true
+cover = true
+coverImage = true
 
   [params.homeInfoParams]
   Title = "👋 Hey there~"
@@ -56,7 +58,7 @@ enableEmoji = true
 
   [params.label]
   text = "OttoElysia"
-  icon = "/images/logo.png"
+  icon = "/images/avatar.png"
   iconHeight = 35
 
   [params.profileMode]

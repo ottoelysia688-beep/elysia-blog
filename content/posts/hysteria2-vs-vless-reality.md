@@ -5,6 +5,7 @@ draft = false
 tags = ["代理", "Hysteria2", "VLESS", "协议对比"]
 categories = ["技术折腾"]
 summary = "同一台 VPS，换一个协议速度差 300 倍。这篇深度对比 Hysteria2 和 VLESS Reality 的区别。"
+cover = "/images/covers/cover-protocol.jpg"
 +++
 
 > 📝 *这篇文章还在撰写中，以下是大纲预告，稍后填充完整内容。*

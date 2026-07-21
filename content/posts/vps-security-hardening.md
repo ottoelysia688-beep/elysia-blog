@@ -5,6 +5,7 @@ draft = false
 tags = ["VPS", "安全", "防火墙", "fail2ban"]
 categories = ["技术折腾"]
 summary = "代理搭好只是第一步，安全加固同样重要。记录防火墙、SSH加固、fail2ban、面板隐藏的完整方案。"
+cover = "/images/covers/cover-security.jpg"
 +++
 
 > 📝 *这篇文章还在撰写中，以下是大纲预告，稍后填充完整内容。*

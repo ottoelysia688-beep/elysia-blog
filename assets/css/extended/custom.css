@@ -80,6 +80,19 @@ body {
     margin-bottom: 16px !important;
 }
 
+/* ===== 3.5 头像圆形美化 ===== */
+.label img {
+    border-radius: 50% !important;
+    border: 2px solid rgba(108, 159, 216, 0.3) !important;
+    box-shadow: 0 2px 8px rgba(108, 159, 216, 0.2) !important;
+    transition: all 0.3s ease;
+}
+
+.label img:hover {
+    transform: rotate(10deg) scale(1.1);
+    box-shadow: 0 4px 16px rgba(108, 159, 216, 0.4) !important;
+}
+
 /* ===== 5. 文章列表卡片 ===== */
 .first-entry .entry-content,
 .post-entry {
