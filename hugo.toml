@@ -116,3 +116,4 @@ weight = 7
 
 [outputs]
 home = ["HTML", "RSS", "JSON"]
+<!-- trigger rebuild -->
