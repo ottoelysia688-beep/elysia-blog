@@ -22,8 +22,7 @@ description = "记录日常折腾的过程与思考"
 author = "Elysia"
 DateFormat = "2006-01-02"
 hideSummary = false
-cover = true
-coverImage = true
+cover = { responsiveImages = true }
 
   [params.homeInfoParams]
   Title = "👋 Hey there~"

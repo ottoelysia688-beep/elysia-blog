@@ -5,7 +5,8 @@ draft = false
 tags = ["Cloudflare", "博客", "免费", "Hugo"]
 categories = ["技术折腾"]
 summary = "完全不花一分钱、不占自己 VPS 资源，用 Cloudflare Pages + Hugo + GitHub 搭建个人博客的全过程。"
-cover = "/images/covers/cover-cloudflare-blog.jpg"
+[cover]
+image = "/images/covers/cover-cloudflare-blog.jpg"
 +++
 
 > 📝 *这篇文章还在撰写中，以下是大纲预告，稍后填充完整内容。*
