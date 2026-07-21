@@ -7,7 +7,7 @@ enableRobotsTXT = true
 enableEmoji = true
 
 [pagination]
-pageSize = 5
+pageSize = 8
 
 [params]
 defaultTheme = "auto"
@@ -21,17 +21,50 @@ TocOpen = false
 description = "记录日常折腾的过程与思考"
 author = "Elysia"
 DateFormat = "2006-01-02"
+hideSummary = false
+showtoc = true
+tocopen = false
+enableEmoji = true
 
   [params.homeInfoParams]
   Title = "👋 Hey there~"
-  Content = "欢迎来到我的博客！这里记录日常折腾的过程与思考。"
+  Content = """\
+欢迎来到我的博客！这里记录日常折腾的过程与思考。\
+\
+🔹 技术折腾 — VPS / 代理 / 自建服务\
+🔹 游戏开发 — WorldBox Mod 开发日记\
+🔹 学习笔记 — 课堂知识整理\
+🔹 生活随笔 — 偶尔写写想法\
+"""
 
   [[params.socialIcons]]
   name = "github"
   url = "https://github.com/ottoelysia688-beep"
 
-[params.assets]
-favicon = "/favicon.ico"
+  [params.assets]
+  favicon = "/favicon.ico"
+  disableHLJS = false
+
+  [params.fuseOpts]
+  isCaseSensitive = false
+  shouldSort = true
+  location = 0
+  distance = 1000
+  threshold = 0.4
+  minMatchCharLength = 0
+  keys = ["title", "summary", "content"]
+
+  [params.label]
+  text = "OttoElysia"
+  icon = "/images/logo.png"
+  iconHeight = 35
+
+  [params.profileMode]
+  enabled = false
+
+  [params.analytics]
+  [params.analytics.google]
+  SiteVerificationTag = ""
 
 [markup]
   [markup.highlight]
@@ -39,6 +72,45 @@ favicon = "/favicon.ico"
   lineNos = false
   codeFences = true
   guessSyntax = true
+  [markup.goldmark]
+  [markup.goldmark.renderer]
+  unsafe = true
+
+# ===== 菜单配置 =====
+[[menu.main]]
+name = "🏠 首页"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "📂 归档"
+url = "/archives/"
+weight = 2
+
+[[menu.main]]
+name = "🔍 搜索"
+url = "/search/"
+weight = 3
+
+[[menu.main]]
+name = "🏷️ 标签"
+url = "/tags/"
+weight = 4
+
+[[menu.main]]
+name = "📁 分类"
+url = "/categories/"
+weight = 5
+
+[[menu.main]]
+name = "👋 关于"
+url = "/about/"
+weight = 6
+
+[[menu.main]]
+name = "🔗 友链"
+url = "/links/"
+weight = 7
 
 [outputs]
 home = ["HTML", "RSS", "JSON"]

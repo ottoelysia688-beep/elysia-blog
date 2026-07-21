@@ -1,5 +1,5 @@
 /* ============================================
-   OttoElysia Blog - PaperMod 二次元美化
+   OttoElysia Blog - PaperMod 二次元美化 v2
    ============================================ */
 
 /* ===== 1. 全局渐变背景 ===== */
@@ -9,10 +9,14 @@
     --accent-blue: #6c9fd8;
     --accent-pink: #e891c7;
     --accent-purple: #9b7ed8;
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(108, 159, 216, 0.12);
 }
 
 [data-theme="dark"] {
     --bg-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a3e 100%);
+    --glass-bg: rgba(25, 25, 40, 0.8);
+    --glass-border: rgba(100, 100, 150, 0.15);
 }
 
 body {
@@ -20,9 +24,9 @@ body {
     background-attachment: fixed !important;
 }
 
-/* ===== 2. 主容器半透明玻璃效果 ===== */
+/* ===== 2. 主容器玻璃效果 ===== */
 .main {
-    background: rgba(255, 255, 255, 0.75) !important;
+    background: var(--glass-bg) !important;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-radius: var(--card-radius) !important;
@@ -32,22 +36,69 @@ body {
     box-shadow: 0 8px 32px rgba(108, 159, 216, 0.1) !important;
 }
 
-[data-theme="dark"] .main {
-    background: rgba(25, 25, 40, 0.8) !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+/* ===== 3. 导航栏玻璃效果 ===== */
+.nav {
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    background: rgba(255, 255, 255, 0.7) !important;
+    border-bottom: 1px solid var(--glass-border) !important;
+    margin-bottom: 0 !important;
 }
 
-/* ===== 3. 文章卡片悬浮动画 ===== */
-.post-title {
-    transition: transform 0.3s ease;
+[data-theme="dark"] .nav {
+    background: rgba(20, 20, 35, 0.75) !important;
 }
 
-.post-title:hover {
-    transform: translateX(4px);
+/* 导航菜单项间距 */
+.nav-menu .nav-item {
+    margin: 0 4px !important;
 }
 
-/* ===== 4. 文章标题渐变色 ===== */
-.post-title a {
+/* 导航链接 hover */
+.nav-menu .nav-item a {
+    border-radius: 8px !important;
+    padding: 6px 12px !important;
+    transition: all 0.3s ease !important;
+}
+
+.nav-menu .nav-item a:hover {
+    background: rgba(108, 159, 216, 0.1) !important;
+    transform: translateY(-1px);
+}
+
+/* ===== 4. 首页欢迎区 ===== */
+.first-entry {
+    border-radius: var(--card-radius) !important;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(240, 147, 251, 0.08)) !important;
+    padding: 50px 30px !important;
+    margin-bottom: 30px !important;
+    text-align: center;
+}
+
+.first-entry .entry-header h2 {
+    font-size: 2em !important;
+    margin-bottom: 16px !important;
+}
+
+/* ===== 5. 文章列表卡片 ===== */
+.first-entry .entry-content,
+.post-entry {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.post-entry {
+    border-radius: 12px !important;
+    margin-bottom: 16px !important;
+}
+
+.post-entry:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 24px rgba(108, 159, 216, 0.15) !important;
+}
+
+/* ===== 6. 文章标题渐变色 ===== */
+.post-title a,
+.entry-header h2 a {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -55,26 +106,15 @@ body {
     transition: all 0.3s ease;
 }
 
-[data-theme="dark"] .post-title a {
+[data-theme="dark"] .post-title a,
+[data-theme="dark"] .entry-header h2 a {
     background: linear-gradient(135deg, #a8b4e8 0%, #c891d4 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
-/* ===== 5. 首页欢迎区美化 ===== */
-.first-entry {
-    border-radius: var(--card-radius) !important;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(240, 147, 251, 0.08)) !important;
-    padding: 40px 30px !important;
-    margin-bottom: 24px !important;
-}
-
-[data-theme="dark"] .first-entry {
-    background: linear-gradient(135deg, rgba(168, 180, 232, 0.05), rgba(200, 145, 212, 0.05)) !important;
-}
-
-/* ===== 6. 链接颜色 ===== */
+/* ===== 7. 链接颜色 ===== */
 a {
     color: var(--accent-blue);
     transition: color 0.2s ease;
@@ -84,8 +124,9 @@ a:hover {
     color: var(--accent-pink);
 }
 
-/* ===== 7. 标签美化（胶囊形） ===== */
-.post-tags a {
+/* ===== 8. 标签美化 ===== */
+.post-tags a,
+.tags a {
     border-radius: 20px !important;
     padding: 4px 14px !important;
     font-size: 0.85em !important;
@@ -95,26 +136,54 @@ a:hover {
     transition: all 0.2s ease;
 }
 
-[data-theme="dark"] .post-tags a {
+[data-theme="dark"] .post-tags a,
+[data-theme="dark"] .tags a {
     background: linear-gradient(135deg, rgba(108, 159, 216, 0.2), rgba(232, 145, 199, 0.2)) !important;
     color: #a8b4e8 !important;
 }
 
-.post-tags a:hover {
+.post-tags a:hover,
+.tags a:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(108, 159, 216, 0.3);
 }
 
-/* ===== 8. 代码块圆角 ===== */
+/* ===== 9. 分类卡片 ===== */
+.categories-list,
+.tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.categories-list a,
+.tags-list a {
+    border-radius: 12px !important;
+    padding: 8px 20px !important;
+    font-size: 0.95em !important;
+}
+
+/* ===== 10. 代码块 ===== */
 .highlight pre {
     border-radius: 12px !important;
     border: 1px solid rgba(108, 159, 216, 0.15) !important;
 }
 
-/* ===== 9. 搜索框美化 ===== */
+.highlight {
+    margin: 1.5em 0 !important;
+}
+
+/* 代码复制按钮 */
+.copy-button {
+    border-radius: 8px !important;
+    transition: all 0.2s ease;
+}
+
+/* ===== 11. 搜索框 ===== */
 #searchInput {
     border-radius: 20px !important;
     border: 2px solid rgba(108, 159, 216, 0.2) !important;
+    padding: 10px 20px !important;
     transition: all 0.3s ease;
 }
 
@@ -123,7 +192,15 @@ a:hover {
     box-shadow: 0 0 0 3px rgba(108, 159, 216, 0.15) !important;
 }
 
-/* ===== 10. 滚动条美化 ===== */
+#searchResults {
+    margin-top: 20px !important;
+}
+
+#searchResults .post-entry {
+    padding: 16px !important;
+}
+
+/* ===== 12. 滚动条 ===== */
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -142,20 +219,7 @@ a:hover {
     background: linear-gradient(135deg, #764ba2, #f093fb);
 }
 
-/* ===== 11. 导航栏玻璃效果 ===== */
-.nav {
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background: rgba(255, 255, 255, 0.7) !important;
-    border-bottom: 1px solid rgba(108, 159, 216, 0.1) !important;
-}
-
-[data-theme="dark"] .nav {
-    background: rgba(25, 25, 40, 0.7) !important;
-    border-bottom: 1px solid rgba(100, 100, 150, 0.15) !important;
-}
-
-/* ===== 12. 文章内容排版优化 ===== */
+/* ===== 13. 文章内容排版 ===== */
 .post-content {
     line-height: 1.8 !important;
     letter-spacing: 0.02em !important;
@@ -168,22 +232,113 @@ a:hover {
 .post-content h2 {
     border-bottom: 2px solid rgba(108, 159, 216, 0.2) !important;
     padding-bottom: 8px !important;
+    margin-top: 2em !important;
 }
 
-/* ===== 13. 页脚美化 ===== */
+.post-content h3 {
+    margin-top: 1.5em !important;
+}
+
+.post-content blockquote {
+    border-left: 4px solid var(--accent-blue) !important;
+    border-radius: 0 8px 8px 0 !important;
+    padding: 12px 20px !important;
+    background: rgba(108, 159, 216, 0.05) !important;
+}
+
+[data-theme="dark"] .post-content blockquote {
+    background: rgba(108, 159, 216, 0.08) !important;
+}
+
+.post-content table {
+    border-radius: 12px !important;
+    overflow: hidden;
+}
+
+.post-content th {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(240, 147, 251, 0.1)) !important;
+}
+
+/* ===== 14. 归档页面 ===== */
+.archives-list {
+    list-style: none !important;
+}
+
+.archives-list .post-entry {
+    margin-bottom: 12px !important;
+}
+
+/* ===== 15. 页脚 ===== */
 .footer {
     text-align: center !important;
     opacity: 0.7 !important;
+    padding: 30px 0 !important;
 }
 
-/* ===== 14. 移动端优化 ===== */
+/* ===== 16. 主题切换按钮 ===== */
+.theme-toggle {
+    transition: transform 0.3s ease !important;
+}
+
+.theme-toggle:hover {
+    transform: rotate(20deg) !important;
+}
+
+/* ===== 17. 面包屑导航 ===== */
+.breadcrumbs {
+    margin-bottom: 20px !important;
+    opacity: 0.7 !important;
+    font-size: 0.9em !important;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline !important;
+}
+
+/* ===== 18. 分页按钮 ===== */
+.pagination {
+    margin-top: 30px !important;
+}
+
+.pagination a {
+    border-radius: 20px !important;
+    padding: 8px 20px !important;
+    transition: all 0.3s ease;
+}
+
+.pagination a:hover {
+    background: rgba(108, 159, 216, 0.1) !important;
+    transform: translateY(-2px);
+}
+
+/* ===== 19. TOC 目录 ===== */
+.toc {
+    border-radius: 12px !important;
+    padding: 16px !important;
+    background: rgba(108, 159, 216, 0.04) !important;
+}
+
+[data-theme="dark"] .toc {
+    background: rgba(108, 159, 216, 0.06) !important;
+}
+
+/* ===== 20. 移动端 ===== */
 @media (max-width: 768px) {
     .main {
         padding: 20px !important;
         border-radius: 12px !important;
     }
-    
+
     .first-entry {
-        padding: 25px 20px !important;
+        padding: 30px 20px !important;
+    }
+
+    .nav-menu .nav-item {
+        margin: 0 2px !important;
+    }
+
+    .nav-menu .nav-item a {
+        padding: 4px 8px !important;
+        font-size: 0.9em !important;
     }
 }
