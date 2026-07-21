@@ -3,7 +3,7 @@ backend:
   repo: ottoelysia688-beep/elysia-blog
   branch: main
   auth_type: oauth
-  app_id: ""
+  app_id: "Ov23lilk8y7RDiVvP9Uy"
 
 # 发布内容存到 content/ 目录
 media_folder: "static/images"
