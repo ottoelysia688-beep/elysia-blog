@@ -22,9 +22,6 @@ description = "记录日常折腾的过程与思考"
 author = "Elysia"
 DateFormat = "2006-01-02"
 hideSummary = false
-showtoc = true
-tocopen = false
-enableEmoji = true
 cover = true
 coverImage = true
 
@@ -78,7 +75,6 @@ coverImage = true
   [markup.goldmark.renderer]
   unsafe = true
 
-# ===== 菜单配置 =====
 [[menu.main]]
 name = "🏠 首页"
 url = "/"
@@ -116,4 +112,3 @@ weight = 7
 
 [outputs]
 home = ["HTML", "RSS", "JSON"]
-<!-- trigger rebuild -->
