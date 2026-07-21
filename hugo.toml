@@ -2,44 +2,52 @@ baseURL = "https://blog.ottoelysia.top/"
 languageCode = "zh-CN"
 defaultContentLanguage = "zh"
 title = "OttoElysia Blog"
-theme = "PaperMod"
+theme = "stack"
 enableRobotsTXT = true
 enableEmoji = true
+paginate = 5
 
-[pagination]
-pageSize = 5
+[Languages]
+[Languages.zh]
+languageName = "中文"
+weight = 1
+title = "OttoElysia Blog"
 
-[params]
-defaultTheme = "auto"
-ShowReadingTime = true
-ShowShareButtons = false
-ShowPostNavLinks = true
-ShowBreadCrumbs = true
-ShowCodeCopyButtons = true
-ShowWordCount = true
-ShowToc = true
-TocOpen = false
-description = "Elysia的个人博客 - 记录学习与生活的点滴"
-author = "Elysia"
-DateFormat = "2006-01-02"
+[Languages.zh.params]
+description = "记录日常折腾的过程与思考"
 
-  [params.homeInfoParams]
-  Title = "👋 Hey there~"
-  Content = "欢迎来到我的博客！这里记录我的学习笔记、生活随笔和技术折腾。"
+[Languages.zh.params.sidebar]
+subtitle = "日常折腾记录 ✨"
 
-  [[params.socialIcons]]
-  name = "github"
-  url = "https://github.com/ottoelysia688-beep"
+[Languages.zh.params.sidebar.avatar]
+enabled = true
+local = true
+src = "images/avatar.png"
 
-[params.assets]
-favicon = "/favicon.ico"
+[[Languages.zh.params.menu.social]]
+identifier = "github"
+name = "GitHub"
+url = "https://github.com/ottoelysia688-beep"
+weight = 1
+
+[Languages.zh.params.article]
+
+[Languages.zh.params.article.license]
+enabled = false
+
+[Languages.zh.params.article.readingTime]
+enabled = true
 
 [markup]
-  [markup.highlight]
-  style = "github-dark"
-  lineNos = false
-  codeFences = true
-  guessSyntax = true
+[markup.highlight]
+style = "github-dark"
+lineNos = false
+codeFences = true
+guessSyntax = true
+
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
 
 [outputs]
 home = ["HTML", "RSS", "JSON"]
