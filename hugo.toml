@@ -1,7 +1,7 @@
 baseURL = "https://blog.ottoelysia.top/"
 languageCode = "zh-CN"
 defaultContentLanguage = "zh"
-title = "OttoElysia Blog"
+title = "OttoElysia"
 theme = "PaperMod"
 enableRobotsTXT = true
 enableEmoji = true
@@ -18,14 +18,14 @@ ShowCodeCopyButtons = true
 ShowWordCount = true
 ShowToc = true
 TocOpen = false
-description = "记录日常折腾的过程与思考"
+description = "技术实践、游戏开发与生活观察。把折腾写成可复用的经验。"
 author = "Elysia"
 DateFormat = "2006-01-02"
 hideSummary = false
 cover = { responsiveImages = true }
 
   [params.homeInfoParams]
-  Title = "👋 Hey there~"
+  Title = "OttoElysia"
   Content = """\
 欢迎来到我的博客！这里记录日常折腾的过程与思考。\
 \
@@ -75,37 +75,37 @@ cover = { responsiveImages = true }
   unsafe = true
 
 [[menu.main]]
-name = "🏠 首页"
+name = "首页"
 url = "/"
 weight = 1
 
 [[menu.main]]
-name = "📂 归档"
+name = "归档"
 url = "/archives/"
 weight = 2
 
 [[menu.main]]
-name = "🔍 搜索"
+name = "搜索"
 url = "/search/"
 weight = 3
 
 [[menu.main]]
-name = "🏷️ 标签"
+name = "标签"
 url = "/tags/"
 weight = 4
 
 [[menu.main]]
-name = "📁 分类"
+name = "分类"
 url = "/categories/"
 weight = 5
 
 [[menu.main]]
-name = "👋 关于"
+name = "关于"
 url = "/about/"
 weight = 6
 
 [[menu.main]]
-name = "🔗 友链"
+name = "友链"
 url = "/links/"
 weight = 7
 
